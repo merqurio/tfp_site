@@ -1,7 +1,18 @@
 {% extends "bases/base.html" %}
 {% block content %}
 {% include "bases/header.html" %}
-<div class="about">
-  <h2>Hello World</h2>    
+<div class="main">
+  <form id="screen_name_form">
+    <label>
+      Introduce a twitter handler
+      <input class="screen_name" type="text" placeholder="@username" />
+    </label>
+  </form>
+  <div class="load hidden">
+     <div class="dot"></div>
+     <div class="outline"><span></span></div>
+  </div>
+  <div class="radarChart"></div>
+  <h1 class="error hidden">This user does either not exist, has not enough information or is a verified account</h1>
 </div>
 {% endblock %}

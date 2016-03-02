@@ -1,72 +1,263 @@
-.about {
+.main {
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(center);
   margin: 0 auto 3em;
   width: 100%;
 
-  .item {
-    @include display(flex);
-    @include flex-direction(column);
-    @include box-align(stretch);
-    @include flex(0 1 25%);
-    @include prefixer(transition, background-color .3, webkit moz spec);
-    background: tint($main_color, 10%);
-    border-top: 3px solid $main-white;
-    color: $main-white;
-    margin: 1em;
-    min-width: 300px;
-    padding: 2em 2.5em;
-    position: relative;
-    text-align: left;
-
-    &:hover {
-      border-color: $third-color;
-    }
-
-    .images {
-      margin: -24px 0 24px -30px;
-      max-width: calc(100% + 60px);
-    }
-
-    h2 {
-      font-size: 2.5vh;
-    }
-  }
-
-  .title {
-    font-size: 1em;
-    margin: 0 0 1em;
-  }
-
-  .feature-list {
-    color: $second-color;
-    font-size: .85;
-    font-style: italic;
-    list-style: none;
-    margin: 0;
-    padding: 2.25em 0 2.5em;
-    text-align: right;
-  }
-
-  .action {
-    @include prefixer(transition, background-color .3, webkit moz spec);
-    background: $second-color;
-    border: 0;
-    border-radius: 1px;
-    color: $main-white;
-    cursor: pointer;
+  h1 {
+    @include center(true, true);
+    text-align: center;
+    color: #BB5E61;
     font-weight: bold;
-    margin-top: auto;
-    padding: 1em 2em;
+  }
 
-    &:focus {
-      background-color: $third-color;
-      outline: 0;
-    }
+  form {
+    @include center(true, true)
+    max-width: 80%;
+    margin: auto;
 
-    &:hover {
-      background-color: $third-color;
+    label {
+      color: #BB5E61;
+      font-size: 5vh;
+      padding: 2vh 0;
     }
   }
+
+
+  .screen_name {
+    font-size: 8vh;
+    height: 10vh;
+  }
+}
+
+$size : 120px;
+$color1 : #BB5E61;
+$color2 : #FFFFFF;
+@mixin keyframes($name) {
+  @-o-keyframes #{$name} { @content };
+  @-moz-keyframes #{$name} { @content };
+  @-webkit-keyframes #{$name} { @content };
+  @keyframes #{$name} { @content };
+}
+@mixin animation($prop...) {
+  -o-animation: $prop;
+  -moz-animation: $prop;
+  -ms-animation: $prop;
+  -webkit-animation: $prop;
+  animation: $prop;
+}
+@mixin transform($prop...) {
+  -o-transform: $prop;
+  -moz-transform: $prop;
+  -webkit-transform: $prop;
+  -ms-transform: $prop;
+  transform: $prop;
+}
+@mixin transform-origin($prop...) {
+  -o-transform-origin: $prop;
+  -moz-transform-origin: $prop;
+  -webkit-transform-origin: $prop;
+  -ms-transform-origin: $prop;
+  transform-origin: $prop;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.load{
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: 0;
+   &:before,
+   &:after,
+   .dot,
+   .outline{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translate(-50%,-50%));
+      border-radius:50%;
+   }
+   .dot{
+      width: #{$size - $size / 100 * 20};
+      height: #{$size - $size / 100 * 20};
+      background: $color2;
+      @include animation(in 4s linear infinite);
+      z-index:2;
+   }
+   &:before{
+      content: "";
+      width: 0px;
+      height: 0px;
+      background: $color1;
+      @include animation(out1 4s linear infinite);
+   }
+   &:after{
+      content: "";
+      width: 0px;
+      height: 0px;
+      background: $color2;
+      @include animation(out2 4s linear infinite);
+   }
+   .outline{
+      width: $size;
+      height: $size;
+      z-index:2;
+      span{
+         width: $size / 2 + 8;
+         height: $size / 2 + 8;
+         @include transform-origin(100% 100%);
+         @include transform(rotate(45deg) skewX(80deg));
+         overflow: hidden;
+         position: absolute;
+         bottom: 50%;
+         right: 50%;
+         @include animation(outline 4s linear infinite);
+         &:before{
+            content: "";
+            display: block;
+            border: solid 5px #fff;
+            width: 200%;
+            height: 200%;
+            border-radius: 50%;
+            @include transform(skewX(-80deg));
+            @include animation(outlineBefore 4s linear infinite);
+         }
+      }
+   }
+}
+
+@include keyframes(outline) {
+   0%{
+      @include transform(rotate(0deg) skewX(80deg));
+   }
+   25%{
+      @include transform(rotate(500deg) skewX(15deg));
+   }
+   50%{
+      @include transform(rotate(1000deg) skewX(40deg));
+   }
+   75%{
+      @include transform(rotate(1500deg) skewX(60deg));
+   }
+   100%{
+      @include transform(rotate(2160deg) skewX(80deg));
+   }
+}
+
+@include keyframes(outlineBefore) {
+   0%{
+      @include transform(skewX(-80deg));
+      border: solid 5px #ffffff;
+   }
+   25%{
+      @include transform(skewX(-15deg));
+      border: solid 5px #ffffff;
+   }
+   49%{
+      border: solid 5px #ffffff;
+   }
+   50%{
+      @include transform(skewX(-40deg));
+      border: solid 5px #E2484D;
+   }
+   75%{
+      @include transform(skewX(-60deg));
+      border: solid 5px #E2484D;
+   }
+   100%{
+      @include transform(skewX(-80deg));
+      border: solid 5px #E2484D;
+   }
+}
+
+@include keyframes(in) {
+   0%{
+      width: #{$size + $size / 100 * 20};
+      height: #{$size + $size / 100 * 20};
+      background:$color2;
+   }
+   40%{
+      width: 0px;
+      height: 0px;
+      background:$color2;
+   }
+   41%{
+      width: 0px;
+      height: 0px;
+      background:$color1;
+   }
+   50%{
+      width: #{$size + $size / 100 * 20};
+      height: #{$size + $size / 100 * 20};
+      background:$color1;
+   }
+   90%{
+      width: 0px;
+      height: 0px;
+      background:$color1;
+   }
+   91%{
+      width: 0px;
+      height: 0px;
+      background:$color2;
+   }
+   100%{
+      width: #{$size + $size / 100 * 20};
+      height: #{$size + $size / 100 * 20};
+      background:$color2;
+   }
+}
+
+@include keyframes(out1) {
+   0%{
+      width:0px;
+      height:0px;
+   }
+   30%{
+      width:120vw;
+      height:120vw;
+   }
+   100%{
+      width:120vw;
+      height:120vw;
+   }
+}
+
+@include keyframes(out2) {
+   0%{
+      width:0px;
+      height:0px;
+   }
+   30%{
+      width:0px;
+      height:0px;
+   }
+   60%{
+      width:120vw;
+      height:120vw;
+   }
+   100%{
+      width:120vw;
+      height:120vw;
+   }
+}
+
+
+
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
