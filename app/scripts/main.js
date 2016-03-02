@@ -14,6 +14,10 @@ function parseJSON(response) {
   return response.json()
 }
 
+function showProfile(type){
+  var text = document.querySelector("."+type);
+  text.classList.remove("hidden");
+}
 
 function drawChart(data){
 
@@ -37,10 +41,11 @@ var margin = {top: 100, right: 100, bottom: 100, left: 100},
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  var form = document.getElementById("screen_name_form");
-  var input = document.querySelector(".screen_name");
-  var loader = document.querySelector(".load")
-  var error_msg = document.querySelector(".error")
+  var form = document.getElementById("screen_name_form"),
+    input = document.querySelector(".screen_name"),
+    logo = document.querySelector(".logo"),
+    loader = document.querySelector(".load"),
+    error_msg = document.querySelector(".error");
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -48,15 +53,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (input.value){
 
       form.classList.add("hidden");
+      logo.classList.add("hidden");
       loader.classList.remove("hidden");
 
       fetch("http://188.166.145.237/v1/user/"+input.value)
         .then(checkStatus)
         .then(parseJSON)
         .then(function(data){
-          loader.classList.add("hidden");
 
-          console.log(data);
+          loader.classList.add("hidden");
+          logo.classList.remove("hidden");
 
           var values = [
 					  [//User Parameters
@@ -68,11 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
 					  ]
 					];
 
+          showProfile(data.final);
           drawChart(values);
+
         })
         .catch(function(error){
           console.log('request failed', error);
           loader.classList.add("hidden");
+          logo.classList.remove("hidden");
           error_msg.classList.remove("hidden");
         })
 

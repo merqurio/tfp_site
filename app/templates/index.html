@@ -7,6 +7,9 @@
       Introduce a twitter handler
       <input class="screen_name" type="text" placeholder="@username" />
     </label>
+    <p>Type the username of the Twitter user you want us to analyze. We’ll study the user’s behavior and calculate
+      whether the user is a troll/ bot or not. In addition, we will tell you how much of a troll/bot the user is and of
+      what kind.</p>
   </form>
   <div class="load hidden">
      <div class="dot"></div>
@@ -14,5 +17,30 @@
   </div>
   <div class="radarChart"></div>
   <h1 class="error hidden">This user does either not exist, has not enough information or is a verified account</h1>
+  <div class="hidden profile drama_queen">
+    <h2>Drama Queen</h2>
+    <img src="images/drama queen.gif">
+    <p>You are very active on Twitter but overuse exclamation marks and capital letters. Try to write more text: there are too many hashtags and mentions in your tweets. Don't be such a drama queen!</p>
+  </div>
+  <div class="hidden profile bot">
+    <h2>Bot</h2>
+    <img src="images/bots.jpg">
+    <p>Behavior your not human. too periodic your timeline is. be proactive: when want publish not wait to mentioned be. Control-C tweeting the same s**t.</p>
+  </div>
+  <div class="hidden profile stalker">
+    <h2>Stalker</h2>
+    <img src="images/Stalker.jpg">
+    <p>You spend way too much time referring to the same person. Twitter has so much more to offer! Get out into the real world and stop stalking or we'll call 911.</p>
+  </div>
+  <div class="hidden profile spammer">
+    <h2>Spammer</h2>
+    <img src="images/Spammer.gif">
+    <p>Enough is enough. This is not the browser toolbar: your tweets include too many links and the same words continuously. Check the dictionary from time to time to enrich your vocabulary. Nobody likes a spammer!</p>
+  </div>
+  <div class="hidden profile hater">
+    <h2>Hater</h2>
+     <img src="images/haterrr.gif">
+    <p>Take a chill pill! Stop having a destructive behaviour: your tweets are full of complaints and demeaning vocabulary. Take a look around Twitter and you'll see life is way better than what you comment it to be!</p>
+  </div>
 </div>
 {% endblock %}

@@ -22,14 +22,31 @@
       font-size: 5vh;
       padding: 2vh 0;
     }
-  }
 
+    p {
+      font-size: 1.8vh;
+      padding-top: 27px;
+    }
+
+  }
 
   .screen_name {
     font-size: 8vh;
     height: 10vh;
   }
 }
+
+
+.profile {
+  width: 100%;
+  padding: 0 15vw;
+
+  p {
+    font-size: 3vh;
+    padding-top: 3vh;
+  }
+}
+
 
 $size : 120px;
 $color1 : #BB5E61;
