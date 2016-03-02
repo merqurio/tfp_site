@@ -2,7 +2,7 @@
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(center);
-  margin: 0 auto 3em;
+  margin: 0 auto 6vh;
   width: 100%;
 
   h1 {
@@ -40,11 +40,17 @@
 .profile {
   width: 100%;
   padding: 0 15vw;
+  text-align: center;
 
   p {
     font-size: 3vh;
     padding-top: 3vh;
   }
+
+  img {
+    padding: 2vh;
+  }
+
 }
 
 

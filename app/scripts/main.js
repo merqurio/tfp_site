@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     input = document.querySelector(".screen_name"),
     logo = document.querySelector(".logo"),
     loader = document.querySelector(".load"),
+    song = document.getElementById("song"),
     error_msg = document.querySelector(".error");
 
   form.addEventListener('submit', function(e){
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       form.classList.add("hidden");
       logo.classList.add("hidden");
       loader.classList.remove("hidden");
+      song.play();
 
       fetch("http://188.166.145.237/v1/user/"+input.value)
         .then(checkStatus)
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(function(data){
 
           loader.classList.add("hidden");
+          song.pause();
           logo.classList.remove("hidden");
 
           var values = [
@@ -81,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(function(error){
           console.log('request failed', error);
           loader.classList.add("hidden");
+          song.pause();
           logo.classList.remove("hidden");
           error_msg.classList.remove("hidden");
         })
