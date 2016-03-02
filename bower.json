@@ -1,0 +1,34 @@
+{
+  "name": "website",
+  "private": true,
+  "dependencies": {
+    "particles.js": "~2.0.0",
+    "reset-css": "~2.0.2011012602",
+    "girder": "~1.0.4",
+    "TheaterJS": "theaterjs#~2.0.1",
+    "bourbon": "~4.2.6",
+    "classie": "~1.0.1",
+    "gsap": "~1.18.2",
+    "scrollmagic": "~2.0.5",
+    "stepsForm": "merqurio/stepsForm#~1.0.2"
+  },
+  "overrides": {
+    "girder": {
+      "main": [
+        "./scss/_girder.scss"
+      ]
+    },
+    "scrollmagic": {
+      "main": [
+        "scrollmagic/uncompressed/ScrollMagic.js",
+        "scrollmagic/uncompressed/plugins/animation.gsap.js",
+        "scrollmagic/uncompressed/plugins/debug.addIndicators.js"
+      ]
+    },
+    "TheaterJS": {
+      "main": [
+        "./dist/theater.min.js"
+      ]
+    }
+  }
+}
