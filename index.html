@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Twitter Finder</title>
+
+  <meta name="description" content="We are creating a tool to help Doctors creating a new type of enhanced medical records.">
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser </a>
+        to improve your experience.
+      </p>
+    <![endif]-->
+  
+<header>
+  <a href="/"><img src="images/logo.png" height="120"></a>
+</header>
+
+<div class="main">
+  <form id="screen_name_form">
+    <label>
+      Introduce a twitter handler
+      <input class="screen_name" type="text" placeholder="@username">
+    </label>
+  </form>
+  <div class="load hidden">
+     <div class="dot"></div>
+     <div class="outline"><span></span></div>
+  </div>
+  <div class="radarChart"></div>
+  <h1 class="error hidden">This user does either not exist, has not enough information or is a verified account</h1>
+</div>
+
+  <script src="scripts/vendor.js"></script>
+  
+  
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>

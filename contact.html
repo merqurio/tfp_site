@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>iomed</title>
+
+  <!--
+      ,,                                          ,,
+      db                                        `7MM
+                                                  MM
+    `7MM  ,pW"Wq.`7MMpMMMb.pMMMb.  .gP"Ya    ,M""bMM
+      MM 6W'   `Wb MM    MM    MM ,M'   Yb ,AP    MM
+      MM 8M     M8 MM    MM    MM 8M"""""" 8MI    MM
+      MM YA.   ,A9 MM    MM    MM YM.    , `Mb    MM
+    .JMML.`Ybmd9'.JMML  JMML  JMML.`Mbmmd'  `Wbmd"MML.
+
+    -->
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="google-site-verification" content="0UwDT33cB-vMb9vGDVRpWaXb5UHR6Q6x32_FC4JLtJE">
+  <meta name="description" content="We are creating a tool to help Doctors creating a new type of enhanced medical records.">
+
+  <link rel="stylesheet" href="styles/vendor.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  <!--[if lt IE 10]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser </a>
+        to improve your experience.
+      </p>
+    <![endif]-->
+  <nav class="vertical-nav">
+    <ul>
+      <li>
+        <a href="/" data-number="1">
+          <span class="dot"></span>
+          <span class="label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/about.html" data-number="2">
+          <span class="dot"></span>
+          <span class="label">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="/product.html" data-number="3">
+          <span class="dot"></span>
+          <span class="label">Product</span>
+        </a>
+      </li>
+      <li>
+        <a href="/contact.html" data-number="5">
+          <span class="dot"></span>
+          <span class="label">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav class="extended-nav">
+    <ul>
+      <li>
+        <a href="/" data-number="1">
+          <span class="dot"></span>
+          <span class="label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="/about.html" data-number="2">
+          <span class="dot"></span>
+          <span class="label">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="/product.html" data-number="3">
+          <span class="dot"></span>
+          <span class="label">Product</span>
+        </a>
+      </li>
+      <li>
+        <a href="/contact.html" data-number="5">
+          <span class="dot"></span>
+          <span class="label">Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <a class="nav-trigger img-replace">Open navigation<span></span></a>
+  
+<header>
+  <a href="/"><img src="images/logo.svg" height="30"></a>
+</header>
+
+<div class="contact">
+  <form id="contact_form" class="simform">
+    <div class="simform-inner">
+      <ol class="questions">
+        <li>
+          <span><label for="email">In order to contact you, please write down your email.</label></span>
+          <input id="email" name="email" type="email" required>
+        </li>
+        <li>
+          <span><label for="name">Would you please provide us a name?</label></span>
+          <input id="name" name="name" type="text" required>
+        </li>
+        <li>
+          <span><label for="city">We love to meet new people. We are based in Barcelona, where you are? <small>[optional]</small></label></span>
+          <input id="city" name="city" type="text">
+        </li>
+        <li>
+          <span><label for="phone">Sometimes an email is not enough. Do you want us to call you? Please provide us a phone number. <small>[optional]</small></label></span>
+          <input id="phone" name="phone" type="number">
+        </li>
+        <li>
+          <span><label for="employment">We want to provide you the best info we can. Are you a Doctor? An investor ? Just curious? <small>[optional]</small></label></span>
+          <input id="employment" name="employment" type="text">
+        </li>
+        <li>
+          <span><label for="message">How can we help you ? Do you want us to send you more information?</label></span>
+          <input id="message" name="message" type="text" required>
+        </li>
+      </ol><!-- /questions -->
+      <button class="submit" type="submit">Send answers</button>
+      <div class="controls">
+        <button class="next"></button>
+        <div class="progress"></div>
+        <span class="number">
+          <span class="number-current"></span>
+          <span class="number-total"></span>
+        </span>
+        <span class="error-message"></span>
+      </div><!-- / controls -->
+    </div><!-- /simform-inner -->
+    <span class="final-message"></span>
+  </form><!-- /simform -->
+  <footer>
+    Contact us at. <a href="mailto:info@iomed.es">info@iomed.es</a> or <a href="tel:0034637404271">(+34) 637-404-271</a>. We are on twitter too as @<a target="_blank" href="https://twitter.com/iomed_ehr">iomed_ehr</a>
+  </footer>
+</div>
+
+  <script>
+    (function(b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function() {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-72142778-1');
+    ga('send', 'pageview');
+  </script>
+
+  <script type="application/ld+json">
+    { "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://iomed.es",
+      "name": "iomed",
+      "logo": "http://iomed.es/images/logo.jpg",
+      "description":"We are creating a tool to help Doctors creating a new type of enhanced medical records.",
+      "contactPoint" : [{ "@type" : "ContactPoint",
+                          "telephone" : "+34-637-404-271",
+                          "contactType" : "sales",
+                          "availableLanguage" : ["French", "English", "Spanish", "German", "Catalan", "Basque"]
+                        }],
+      "email": "mailto:info@iomed.es",
+      "sameAs" : [ "http://www.twitter.com/iomed_ehr", "https://github.com/iomedhealth/" ]
+    }
+  </script>
+
+  <script src="scripts/vendor.js"></script>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var contact_form = document.getElementById('contact_form');
+  new stepsForm( contact_form, {
+  				onSubmit : function( form ) {
+  					// hide form
+  					classie.addClass( contact_form.querySelector( '.simform-inner' ), 'hide' );
+
+            var messageEl = contact_form.querySelector( '.final-message' );
+            var formData = new FormData(form)
+            var req = new XMLHttpRequest();
+
+            if ('withCredentials' in req) {
+                req.open('POST', 'http://api.iomed.es/v1/mail', true);
+
+                req.onreadystatechange = function() {
+                    if (req.readyState === 4) {
+                        if (req.status >= 200 && req.status < 400) {
+                          messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+                          classie.addClass( messageEl, 'show' );
+                        } else {
+                          messageEl.innerHTML = 'There was an error, please try again later. Thanks.';
+                          classie.addClass( messageEl, 'show' );
+                        }
+                    } else {
+                      messageEl.innerHTML = 'There was an error, please try again later. Thanks.';
+                      classie.addClass( messageEl, 'show' );
+                    }
+                };
+                req.send(formData);
+            }
+
+  				}
+  			} );
+});
+</script>
+
+
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
